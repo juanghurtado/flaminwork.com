@@ -1,0 +1,87 @@
+--- 
+title: Javascript
+---
+
+<% content_for :css do %>
+<style>
+	section li.even {
+		background: #eee;
+	}
+		
+	section li.odd {
+		background: #ccc;
+	}
+	
+	section li.first {
+		background: #bbb;
+		color: #000;
+	}
+	
+	section li.last {
+		background: #bbb;
+		color: #000;
+	}
+		
+	section li.hover {
+		background: #aaa;
+		color: #000;
+	}
+</style>
+<% end %>
+
+<% content_for :js do %>
+<script>
+	jQuery(function() {
+		styleHelper.firstLast('ul', 'li');
+		styleHelper.evenOdd('ul', 'li');
+		styleHelper.addHover('li');
+		
+		expand.init();
+	});
+</script>
+<% end %>
+
+<h2>Live demo: Javascript</h2>
+
+<h3>Style Helper</h3>
+
+<ul>
+	<li>This should have <code>class="first"</code> added by JS</li>
+	<li>Lorem</li>
+	<li>Ipsum</li>
+	<li>Dolor</li>
+	<li>Sit</li>
+	<li>Amet</li>
+	<li>Consectetum</li>
+	<li>This should have <code>class="last"</code> added by JS</li>
+</ul>
+
+<h3>Expand blocks</h3>
+
+<div class="expand-wrapper">
+	<h4 class="expand-title">Click me!</h4>
+
+	<div class="expand-body">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	</div>
+</div>
+
+<hr class="separator" />
+
+<div class="expand-wrapper">
+	<h4 class="expand-title">Click me!</h4>
+
+	<div class="expand-body visible">
+		<p><strong>I will be visible by default!</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	</div>
+</div>
+
+<hr class="separator" />
+
+<div class="expand-wrapper">
+	<h4 class="expand-title">Click me!</h4>
+
+	<div class="expand-body fade">
+		<p><strong>I will have a fade effect!</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	</div>
+</div>

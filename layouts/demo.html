@@ -1,0 +1,58 @@
+<!doctype html>
+<!--[if lt IE 7]><html lang="en" class="ie ie6 ltie9 ltie8 ltie7"><![endif]-->
+<!--[if IE 7]><html lang="en" class="ie ie7 ltie9 ltie8"><![endif]-->
+<!--[if IE 8]><html lang="en" class="ie ie8 ltie9"><![endif]-->
+<!--[if IE 9]><html lang="en" class="ie ie9"><![endif]-->
+<!--[if gt IE 9]><html lang="en" class="ie"><![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+	<!--[if IE]><![endif]-->
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	
+	<title>Live demo: <%= @item[:title] %> - Flaminwork</title>
+	
+	<!-- Styles -->
+	<link href="/flaminwork/flaminwork.css" rel="stylesheet" />
+	<link href="/css/styles.css" rel="stylesheet" />
+	<%= @item[:content_for_css] %>
+	
+	<!-- Scripts -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
+	<script src="/flaminwork/flaminwork.js"></script>
+	<script src="/js/main.js"></script>
+	<%= @item[:content_for_js] %>
+</head>	
+<body>
+	<div id="wrapper">
+		<header>
+			<h1><a href="/index.html"><img src="/images/content/logo-h.png" alt="Flaminwork - The tiny front-end framework for lazy developers" /></a></h1>
+		</header>
+		
+		<nav>
+			<ul>
+				<li class="<%= @item[:filename]=='content/demo/index.html'?'current':'' %>"><a href="/demo/">Text</a></li>
+				<li class="<%= @item[:filename]=='content/demo/css-helpers.html'?'current':'' %>"><a href="/demo/css-helpers/">CSS Helpers</a></li>
+				<li class="<%= @item[:filename]=='content/demo/forms.html'?'current':'' %>"><a href="/demo/forms/">Forms</a></li>
+				<li class="<%= @item[:filename]=='content/demo/grid.html'?'current':'' %>"><a href="/demo/grid/">Grid</a></li>
+				<li class="<%= @item[:filename]=='content/demo/javascript.html'?'current':'' %>"><a href="/demo/javascript/">Javascript</a></li>
+			</ul>
+		</nav>
+		
+		<section id="content">
+			<%= yield %>
+		</section><!-- #content -->
+	
+		<footer>
+			<ul>
+				<li class="twitter"><a href="http://twitter.com/flaminwork">@flaminwork</a></li>
+				<li class="github"><a href="http://github.com/juanghurtado/flaminwork">GitHub repository</a></li>
+				<li class="mail">hello(at)flaminwork(dot)com</li>
+			</ul>
+		</footer>
+	</div><!-- #wrapper -->
+</body>
+</html>
